@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象和jQuery对象相互转换</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+
+<video src="mov.mp4" muted></video>
+<script>
+    //jQuery对象和DOM对象可以相互转换 jQuery要使用DOM 则需将其对象转换为DOM对象才能使用
+
+    //1 DOM转为jQuery：  $(DOM对象)
+        //直接获取视频，得到得就是jQuery对象
+    //$('video');
+        //已经使用原生js获取为DOM 则需转换为jQuery
+    var myVideo = document.querySelector('video');
+    $(myVideo);
+    //$(myVideo).play();//报错jQuery中没有play方法
+
+
+    //2 jQuery转为DOM：
+    //      $('div')[index]  / $('div').get(index)
+
+    //myVideo.play(); 自动播放视频
+    $('video')[0].play();  //此时可以自动播放
+    //$('video').get(0).play()
+
+
+</script>
+</body>
+</html>

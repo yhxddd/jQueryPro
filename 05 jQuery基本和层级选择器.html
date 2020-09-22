@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery基本和层级选择器</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div>我是div</div>
+<div class="nav">我是nav div</div>
+<p>我是p</p>
+<ol>
+    <li>我是ol 的</li>
+    <li>我是ol 的</li>
+    <li>我是ol 的</li>
+    <li>我是ol 的</li>
+</ol>
+<ul>
+    <li>我是ul 的</li>
+    <li>我是ul 的</li>
+    <li>我是ul 的</li>
+    <li>我是ul 的</li>
+</ul>
+<script>
+    //原生js获取元素方式很多，jQuery进行了封装
+    //jQuery获取元素通过选择器：
+
+    // 基础选择器：  $("选择器") //里面直接些css选择器 但要加引号
+                //$("#id")  $("*") $(".class") $("div")
+                // $("div,p,li") 获取多个元素
+                // $("li.current") 交集元素
+                // $("ul>li") 子代选择器:获取亲儿子 不会获取孙子
+                // $("ul li") 后代选择器：获取ul下面所有得li 包括孙子
+
+    $(function () {
+        console.log($(".nav"));
+
+        console.log($("ul li"));
+    })
+
+</script>
+</body>
+</html>

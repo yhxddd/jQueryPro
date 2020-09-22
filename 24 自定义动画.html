@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义动画</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<button>动起来</button>
+<div></div>
+
+<script>
+    // animate(params,[speed],[easing],[fn])
+    //      params: 想要更改得样式属性 以对象得形式传递 必须写，属性名可以不带引号，如果是复合属性需采用驼峰命名法
+
+    $(function() {
+        $("button").click(function() {
+            $("div").animate({
+                left: 500,
+                top: 300,
+                opacity: .4,
+                width: 500
+            }, 500);
+        })
+    })
+
+</script>
+</body>
+</html>

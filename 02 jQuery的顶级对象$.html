@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的顶级对象</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #1ba1e6;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+<script>
+    // $ 是jQuery的别称
+    /*
+    $(function(){
+        alert(11);
+    });
+    */
+    jQuery(function () {
+        alert(11);
+        //$('div').hide();
+        jQuery('div').hide();
+    })
+    // $ 是jQuery的顶级对象  相当于原生的window
+
+</script>
+</body>
+</html>

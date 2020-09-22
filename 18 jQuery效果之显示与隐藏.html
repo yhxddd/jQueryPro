@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示与隐藏</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 400px;
+            background-color: #1ba1e6;
+        }
+    </style>
+</head>
+<body>
+
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+<script>
+    //显示： show([speed],[easing],[fn])
+    // speed 速度，三种：slow normal fast 或毫秒数
+    // easing： 指定切换效果  默认值swing ，可用 linear
+    // fn ：回调函数 动画执行完成后执行该函数
+
+    //隐藏： hide([speed],[easing],[fn])
+
+    //切换： toggle([speed],[easing],[fn])
+
+    $(function () {
+        //显示
+        $('button').eq(0).click(function () {
+            $("div").show("slow",function () {
+                alert("显示成功");
+            });
+        });
+        //隐藏
+        $('button').eq(1).click(function () {
+            $("div").hide("slow",function () {
+                alert("隐藏成功");
+            });
+        });
+        //切换
+        $('button').eq(2).click(function () {
+            $("div").toggle("slow");
+        });
+    })
+
+</script>
+</body>
+</html>

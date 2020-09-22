@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作样式之css</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #1ba1e6;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    //样式操作之css方法
+    $(function () {
+        //只写属性名 则返回属性值
+        console.log($("div").css("width"));
+        //修改属性： 属性名,属性值
+        // 属性名必须加引号，若属性值是数字 则可以不加引号不加单位
+        //$("div").css("width",300);
+        //$("div").css("background-color","pink");
+
+        //以对象形式修改则 属性名可以不加引号
+        $("div").css({
+            width:400,
+            height: 400,
+            backgroundColor: "red"
+        })
+    })
+</script>
+</body>
+</html>

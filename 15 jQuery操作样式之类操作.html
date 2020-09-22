@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作样式之类操作</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            background-color: #1ba1e6;
+            margin: 100px auto;
+            transition: all 0.5s;
+        }
+        .current{
+            background-color: red;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+
+<div class="current"></div>
+<script>
+    $(function () {
+        $("div").click(function () {
+            //添加类
+            //$(this).addClass("current");
+            //删除类
+            //$(this).removeClass("current");
+
+            //切换类 toggleClass
+            $(this).toggleClass("current");
+        })
+    })
+</script>
+</body>
+</html>

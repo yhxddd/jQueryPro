@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回指定祖先元素</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="one">
+    <div class="two">
+        <div class="three">
+            <div class="four">我不容易</div>
+        </div>
+    </div>
+</div>
+<script>
+    console.log($(".four").parent().parent().parent());
+    //所有父亲元素
+    console.log($(".four").parents());
+
+    console.log($(".four").parents(".one"));
+</script>
+</body>
+</html>

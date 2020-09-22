@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象和jQuery对象</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #1ba1e6;
+        }
+    </style>
+</head>
+<body>
+
+
+<div></div>
+<script>
+    // DOM 对象： 原生js获取过来得是DOM对象
+    var myDiv = document.querySelector('div');
+    //meDiv是DOM对象
+    console.dir(myDiv);
+
+    //jQuery对象： 用jQuery方式获取过来得对象  本质：通过$把DOM元素进行了包装
+    $('div');
+    console.dir($('div'));//伪数组存储
+    //jQuery对象只能使用jQuery方法，DOM对象只能使用原生js得属性和方法 不能混用
+    myDiv.style.display = 'none'; //隐藏div
+    //$('div').hide();  //jQuery隐藏方法   不能使用$('div').style.display....
+
+</script>
+</body>
+</html>

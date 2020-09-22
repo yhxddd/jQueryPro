@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery筛选方法（下）</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<ol>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li class="item">我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+</ol>
+<ul>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+    <li>我是ol 的li</li>
+</ul>
+<div class="current">俺有current</div>
+<div>俺木有current</div>
+
+
+<script>
+    //选该元素的亲兄弟元素
+    $("ol .item").siblings("li").css("color","red");
+
+    //选择第n个元素：
+    var index = 2;
+    //$("ul li:eq(2)").css("color","blue");
+
+    $("ul li:eq("+index+")").css("color","blue");
+
+    //$("ul li").eq(2).css("color","blue");
+    $("ul li").eq(index).css("color","blue");
+
+
+    //判断是否有某个类名
+    $("div:first").hasClass("current");
+</script>
+
+</body>
+</html>

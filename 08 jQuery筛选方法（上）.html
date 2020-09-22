@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery筛选方法（上）</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div class="yeye">
+    <div class="father">
+        <div class="son">儿子</div>
+    </div>
+</div>
+
+<div class="nav">
+    <p>我是屁</p>
+    <div>
+        <p>我是p</p>
+    </div>
+</div>
+<script>
+    //jQuery筛选方法:
+        //parent()    $("li").parent  查找最近一级的父级
+        //children(selector)   $("ul").children("li") 相当于 $("ul>li")查找最近一级得儿子
+        //find(selector)   $("ul").find("li")  后代选择器$("ul li")
+        //siblings(selector)  $(".first").siblings("li")   查找兄弟节点 不包括自己本身
+        //nextAll([expr])     $(".first").nextAll()  查找当前元素之后所有得同辈元素
+        //prevAll([expr])    $(".last").prevAll()   查找当前元素之前所有得同辈元素
+        //hasClass(class)     $("div").hasClass("protected")检查是否含有某个类 有返回true
+        //eq(index)      $("li").eq(2)  获取所有li中索引号为2的li  index从0开始
+
+    $(function () {
+        //查找父亲
+        console.log($(".son").parent());
+
+        //选子元素：
+            //亲儿子：
+        //$(".nav").children("p").css("color","red");
+            //所有后代
+        $(".nav").find("p").css("color","blue");
+    })
+</script>
+</body>
+</html>

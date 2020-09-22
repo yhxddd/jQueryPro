@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的基本使用</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #1ba1e6;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    //jQuery: 是一个js的库   javascript Query
+    //链式编程 隐式迭代
+    // 可跨浏览器使用
+
+    //将div隐藏起来
+    //$('div').hide();
+
+    //若要将script写在div标签上面 则需要一个入口函数:所有DOM加载完毕后执行下面的代码
+
+    $(document).ready(function () {
+        $('div').hide();
+    });
+    //第二中：
+    $(function () {
+        $('div').hide();
+    })
+
+</script>
+</body>
+</html>

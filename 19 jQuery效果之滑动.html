@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery效果之滑动</title>
+    <style>
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+<button>下拉滑动</button>
+<button>上拉滑动</button>
+<button>切换滑动</button>
+<div></div>
+<script>
+    //下拉滑动： slideDown([speed],[easing],[fn])
+    // speed 速度，三种：slow normal fast 或毫秒数
+    // easing： 指定切换效果  默认值swing ，可用 linear
+    // fn ：回调函数 动画执行完成后执行该函数
+    $(function() {
+        $("button").eq(0).click(function() {
+            // 下滑动 slideDown()
+            $("div").slideDown();
+        });
+        $("button").eq(1).click(function() {
+            // 上滑动 slideUp()
+            $("div").slideUp(500);
+        });
+
+        $("button").eq(2).click(function() {
+            // 滑动切换 slideToggle()
+            $("div").slideToggle(500);
+        });
+
+    });
+</script>
+
+</body>
+</html>
