@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件处理on</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #1ba1e6;
+        }
+        .current{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<ul>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+    <li>我们都是好孩子</li>
+</ul>
+<ol>
+
+</ol>
+<script>
+    $(function () {
+        //1 单个事件注册
+        /*$("div").click(function () {
+            $(this).css("background","pink");
+        });
+        $("div").mouseenter(function () {
+            $(this).css("background","yellow");
+        });
+*/
+
+        //2 事件处理 on
+            // (1)可以绑定一个或多个事件处理程序
+        //element.on(events,[selector],fn)   events：一个或多个用空格分隔的事件类型 如 click keydown
+                                            //selector：元素的子元素选择器
+        /*
+        $("div").on({
+            mouseenter:function () {
+                $(this).css("background","yellow");
+            },
+            click:function () {
+                $(this).css("background","pink");
+            },
+            mouseleave:function(){
+                $(this).css("background","red");
+            }
+        })*/
+        $("div").on("mouseenter mouseleave", function () {
+            //alert(11);
+            $(this).toggleClass("current");
+        });
+
+            //(2)on可以实现事件委托:把原来嫁给子元素身上的事件绑定在父元素身上 实现委派
+        //$("ul li").click();  会给每个小li加上点击事件
+        $('ul').on('click','li',function () {
+            alert("hello world");
+            // 事件绑定在ul上  但是触发的对象是ul中的li
+        });
+
+            //(3)on可以给动态创建的元素绑定事件
+        //如果使用click绑定事件  此时还没有创建li 所以点击不会触发
+        /*$("ol li").click(function () {
+            alert(11);
+        });*/
+        $("ol").on("click","li",function () {
+            alert(11);
+        });
+        var li = $("<li>我是动态创建的li</li>");
+        $("ol").append(li);
+    })
+</script>
+
+</body>
+</html>

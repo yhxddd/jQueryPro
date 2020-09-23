@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多库共存</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+<script>
+    $(function () {
+        function $(ele) {
+            return document.querySelector(ele);
+        }
+        console.log($("div"));
+        // 1  $是函数的名字 和jQuery冲突
+        jQuery.each();
+        // 2. 让jquery 释放对$ 控制权 让用自己决定
+        var suibian = jQuery.noConflict();
+        console.log(suibian("span"));
+        suibian.each();
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拷贝对象</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    //拷贝对象： $.extend([deep],target,object1,[objectN])
+            // deep: 如果为true为深拷贝，false浅拷贝 默认为fasle
+            // target： 要拷贝的目标对象
+            // object1 ： 被拷贝的第一个对象
+    //即： 将object1 ... objectN 拷贝给 target
+    $(function() {
+        //targetObj 没有内容时 会直接赋值
+        // 如果 targetObj有内容  深拷贝会覆盖原来的数据
+        var targetObj = {
+            id: 0,
+            msg:{
+                sex:'男'
+            }
+        };
+        var obj = {
+            id:1,
+            name:'andy',
+            msg:{
+                age:18
+            }
+        };
+        //$.extend(targetObj,obj);
+        //console.log(targetObj);
+
+        // 1.  浅拷贝是把被拷贝对象 复杂数据类型中的地址 拷贝给目标对象 修改目标对象会影响被拷贝对象
+        /*
+        targetObj.msg.age = 20;
+        console.log(targetObj);
+        console.log(obj); //两个age都变为20
+*/
+
+        // 2. 深拷贝把里面的数据完全复制一份给目标对象 如果里面有不冲突的属性,会合并到一起
+        $.extend(true, targetObj, obj);
+        // console.log(targetObj); // 会覆盖targetObj 里面原来的数据
+        targetObj.msg.age = 20;
+        console.log(targetObj); // msg :{sex: "男", age: 20}
+        console.log(obj);
+
+    })
+</script>
+</body>
+</html>

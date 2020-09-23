@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #1ba1e6;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+<script>
+    $(function () {
+        $(document).on("click", function() {
+            console.log("点击了document");
+
+        });
+        $("div").on("click", function(event) {
+            // console.log(event);
+            console.log("点击了div");
+            event.stopPropagation();//阻止冒泡
+        })
+    });
+</script>
+</body>
+</html>
